@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+
+<body>
+
+  <h3>Listar todos los posts {{ posts|length }}</h3>
+
+  <ul>
+    {% for post in posts %}
+    <li> {{ post.titulo }} </li>
+    {% endfor %}
+  </ul>
+  <hr>
+  <h3>Listar todo los post que tengan Type en el titulo</h3>
+  <ul>
+    {% for post in filtro %}
+    <li> {{ post.titulo }} </li>
+    {% endfor %}
+  </ul>
+
+  <h3>Consultar un unico registro</h3>
+
+  {{post.fecha }} - {{ post.titulo }}
+
+  <hr>
+
+  <h3>Limite en la consulta {{ limite|length }}</h3>
+
+ <ul>
+    {% for post in limite %}
+    <li> {{ post.id }} </li>
+    {% endfor %}
+  </ul>
+  <hr>
+
+  <h3>Ordenamos por el cuerpo {{ orden|length }}</h3>
+
+ <ul>
+    {% for post in orden %}
+    <li> {{ post.cuerpo }} </li>
+    {% endfor %}
+  </ul>
+  <hr>
+
+  <h3>Obtener los menores a 20 {{ menor|length }}</h3>
+
+ <ul>
+    {% for post in menor %}
+    <li> {{ post.id }} </li>
+    {% endfor %}
+  </ul>
+
+
+</body>
+
+</html>
